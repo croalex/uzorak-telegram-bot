@@ -24,18 +24,11 @@ Choose an option below:"""
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     """Send welcome message with inline keyboard when /start is issued."""
-    # Send GIF animation first
-    with open('uzorak_demo.gif', 'rb') as gif_file:
-        await update.message.reply_animation(
-            animation=gif_file,
-            caption="📊 Sample COA Report Preview (GIF)"
-        )
-
-    # Send MP4 video second
+    # Send video demo first
     with open('uzorak_demo.mp4', 'rb') as video_file:
         await update.message.reply_video(
             video=video_file,
-            caption="📊 Sample COA Report Preview (Video)"
+            caption="📊 Sample COA Report Preview"
         )
 
     # Send welcome message with buttons
