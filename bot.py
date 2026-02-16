@@ -9,19 +9,19 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-WELCOME_MESSAGE = """🚀 We just launched our Advanced Peptide Testing Service.
+WELCOME_MESSAGE = """We just launched our Advanced Peptide Testing Service.
 
 
 **99% Purity = Dangerous Lie.**
 
 
-✴️ Don't believe? Check with ChatGPT ⬇️
+✴️ Don't believe? Check with ChatGPT 
 
-✅ Follow @Uzorak channel for % and COA's ⬇️
+✅ Follow @Uzorak channel for % and COA's 
 
-✅ Check our sample Reta report below ⬇️
+✅ Check our sample Reta report below 
 
-❇️ or Order your Test Analysis at uzorak.com ⬇️"""
+❇️ or Order your Test Analysis at uzorak.com """
 
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
