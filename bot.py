@@ -24,10 +24,25 @@ Choose an option below:"""
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     """Send welcome message with inline keyboard when /start is issued."""
+    # Send GIF animation first
+    with open('uzorak_demo.gif', 'rb') as gif_file:
+        await update.message.reply_animation(
+            animation=gif_file,
+            caption="📊 Sample COA Report Preview (GIF)"
+        )
+
+    # Send MP4 video second
+    with open('uzorak_demo.mp4', 'rb') as video_file:
+        await update.message.reply_video(
+            video=video_file,
+            caption="📊 Sample COA Report Preview (Video)"
+        )
+
+    # Send welcome message with buttons
     keyboard = [
         [InlineKeyboardButton("📢 Uzorak Channel", url="https://t.me/uzorak")],
         [InlineKeyboardButton("🌐 Uzorak.com", url="https://uzorak.com")],
-        [InlineKeyboardButton("📄 Sample COA", url="https://uzorak.com/sample-coa")]
+        [InlineKeyboardButton("📄 Sample COA Report", url="https://uzorak.com/#/verify/GYHLVP")]
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
 
