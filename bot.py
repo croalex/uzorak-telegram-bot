@@ -9,17 +9,19 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-WELCOME_MESSAGE = """🧪 Welcome to Uzorak Lab!
+WELCOME_MESSAGE = """🚀 We just launched our Advanced Peptide Testing Service.
 
-Professional peptide testing with LC-MS technology.
 
-✓ Detailed impurity analysis
-✓ Certificate of Analysis (COA)
-✓ Beyond standard UV-HPLC results
+**99% Purity = Dangerous Lie.**
 
-📍 Based in Zagreb, Croatia
 
-Choose an option below:"""
+✴️ Don't believe? Check with ChatGPT ⬇️
+
+✅ Follow @Uzorak channel for % and COA's ⬇️
+
+✅ Check our sample Reta report below ⬇️
+
+❇️ or Order your Test Analysis at uzorak.com ⬇️"""
 
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
@@ -28,14 +30,15 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     with open('uzorak_demo.mp4', 'rb') as video_file:
         await update.message.reply_video(
             video=video_file,
-            caption="📊 Sample COA Report Preview"
+            caption="Don't trust your peptides. Verify."
         )
 
     # Send welcome message with buttons
     keyboard = [
+        [InlineKeyboardButton("ChatGPT on 99%", url="https://chatgpt.com/share/679690bb-4c28-8012-b662-a293b83e1fcb")],
         [InlineKeyboardButton("📢 Uzorak Channel", url="https://t.me/uzorak")],
-        [InlineKeyboardButton("🌐 Uzorak.com", url="https://uzorak.com")],
-        [InlineKeyboardButton("📄 Sample COA Report", url="https://uzorak.com/#/verify/GYHLVP")]
+        [InlineKeyboardButton("📄 Sample COA Report", url="https://uzorak.com/#/verify/GYHLVP")],
+        [InlineKeyboardButton("🌐 Uzorak.com", url="https://uzorak.com")]
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
 
